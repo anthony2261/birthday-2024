@@ -7,9 +7,10 @@ interface MagnifyingGlassProps {
   magnifierSize: number;
   scale: number;
   children: React.ReactNode;
+  onHandleMouseDown?: (e: React.MouseEvent) => void;
 }
 
-export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, children }: MagnifyingGlassProps) {
+export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, children, onHandleMouseDown }: MagnifyingGlassProps) {
   return (
     <div
       className="absolute pointer-events-none"
@@ -43,14 +44,19 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
       </div>
 
       <div 
-        className="absolute transform"
+        className="absolute transform cursor-move"
         style={{
           height: magnifierSize * 0.6,
           width: '15px',
           right: '12px',
           top: '80%',
           transformOrigin: 'center top',
-          transform: 'rotate(-45deg)'
+          transform: 'rotate(-45deg)',
+          pointerEvents: 'auto'
+        }}
+        onMouseDown={(e) => {
+          e.stopPropagation();
+          onHandleMouseDown?.(e);
         }}
       >
         <div className="h-full w-full bg-gradient-to-b from-indigo-200/50 to-indigo-300/50 rounded-full shadow-md" />
