@@ -15,11 +15,11 @@ export function Content({ blur }: { blur: boolean }) {
             <div className={`p-6  ${blur ? "blur-[1px]" : ""}`}>
               {/* Decorative letterhead */}
               <div className="absolute top-2 right-2 text-[3px] text-gray-400">
-                December 15, 2023
+                November 16, 2024
               </div>
 
-              <div className="text-[3.5px] text-gray-700 max-w-2xl leading-relaxed space-y-3">
-                <p className="font-serif italic text-[4px] text-gray-800 mb-4">
+              <div className="text-[3px] text-gray-700 max-w-2xl leading-relaxed space-y-2">
+                <p className="font-serif italic text-[3.5px] text-gray-800 mb-3">
                   Dear Friend,
                 </p>
 
@@ -46,7 +46,7 @@ export function Content({ blur }: { blur: boolean }) {
                   celebration.
                 </p>
 
-                <p className="mt-4 font-serif italic text-[4px] text-gray-800">
+                <p className="mt-3 font-serif italic text-[3.5px] text-gray-800">
                   Warmest regards,
                   <br />
                   Anthony
@@ -55,7 +55,7 @@ export function Content({ blur }: { blur: boolean }) {
 
               {/* Decorative watermark */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12px] text-gray-100 font-serif rotate-[-30deg]">
+                <div className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12px] text-gray-100 font-serif rotate-[-15deg]">
                   ✧✧✧
                 </div>
               </div>
