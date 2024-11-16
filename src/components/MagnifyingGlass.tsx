@@ -49,9 +49,9 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
           height: magnifierSize * 0.6,
           width: '15px',
           right: '12px',
-          top: '80%',
+          top: '83%',
           transformOrigin: 'center top',
-          transform: 'rotate(-45deg)',
+          transform: 'rotate(-48deg)',
           pointerEvents: 'auto'
         }}
         onMouseDown={(e) => {
@@ -64,7 +64,7 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
           onHandleMouseDown?.(e);
         }}
       >
-        <div className="h-full w-full bg-gradient-to-b from-indigo-200/50 to-indigo-300/50 rounded-full shadow-md" />
+        <div className="h-full w-full bg-gradient-to-b from-indigo-200/50 to-indigo-300/50 rounded-b-full shadow-md" />
       </div>
     </div>
   );

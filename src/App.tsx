@@ -6,7 +6,8 @@ import type { Position } from './types';
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const magnifierSize = 150;
+  // 150 if large screen, 120 if small screen
+  const magnifierSize = window.innerWidth > 768 ? 150 : 120;
   // const scale = 1.75;
   const scale = 5;
   // const scale = 1;
@@ -94,7 +95,7 @@ function App() {
       onTouchCancel={handleMouseUp}
     >
       <div className="absolute inset-0">
-        <Content />
+        <Content blur={true} />
       </div>
 
       <MagnifyingGlass
@@ -104,7 +105,7 @@ function App() {
         scale={scale}
         onHandleMouseDown={handleHandleMouseDown}
       >
-        <Content />
+        <Content blur={false} />
       </MagnifyingGlass>
 
       {showIntro && <IntroTooltip />}
