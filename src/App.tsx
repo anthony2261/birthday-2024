@@ -51,25 +51,29 @@ function App() {
   //   // Remove this function as we don't want to handle clicks anywhere
   // };
 
-  const handleHandleMouseDown = (e: React.MouseEvent) => {
+  const handleHandleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
-      // Store the offset between click position and magnifying glass position
+      const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : (e as React.MouseEvent).clientY;
+      
       dragOffsetRef.current = {
-        x: e.clientX - rect.left - position.x,
-        y: e.clientY - rect.top - position.y
+        x: clientX - rect.left - position.x,
+        y: clientY - rect.top - position.y
       };
       setIsDragging(true);
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (isDragging && containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
-      // Use the stored offset to maintain the relative position
+      const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : (e as React.MouseEvent).clientY;
+
       setPosition({
-        x: Math.min(Math.max(0, e.clientX - rect.left - dragOffsetRef.current.x), rect.width - magnifierSize),
-        y: Math.min(Math.max(0, e.clientY - rect.top - dragOffsetRef.current.y), rect.height - magnifierSize)
+        x: Math.min(Math.max(0, clientX - rect.left - dragOffsetRef.current.x), rect.width - magnifierSize),
+        y: Math.min(Math.max(0, clientY - rect.top - dragOffsetRef.current.y), rect.height - magnifierSize)
       });
     }
   };
@@ -81,10 +85,13 @@ function App() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 select-none cursor-default overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 select-none cursor-default overflow-hidden touch-none"
       onMouseMove={handleMouseMove}
+      onTouchMove={handleMouseMove}
       onMouseUp={handleMouseUp}
+      onTouchEnd={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      onTouchCancel={handleMouseUp}
     >
       <div className="absolute inset-0">
         <Content />

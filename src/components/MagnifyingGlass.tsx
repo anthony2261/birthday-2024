@@ -7,7 +7,7 @@ interface MagnifyingGlassProps {
   magnifierSize: number;
   scale: number;
   children: React.ReactNode;
-  onHandleMouseDown?: (e: React.MouseEvent) => void;
+  onHandleMouseDown?: (e: React.MouseEvent | React.TouchEvent) => void;
 }
 
 export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, children, onHandleMouseDown }: MagnifyingGlassProps) {
@@ -56,6 +56,11 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
         }}
         onMouseDown={(e) => {
           e.stopPropagation();
+          onHandleMouseDown?.(e);
+        }}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
           onHandleMouseDown?.(e);
         }}
       >
