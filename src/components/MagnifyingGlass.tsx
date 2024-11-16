@@ -44,7 +44,7 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
       </div>
 
       <div 
-        className="absolute transform cursor-move"
+        className="absolute transform cursor-move touch-none"
         style={{
           height: magnifierSize * 0.6,
           width: '15px',
