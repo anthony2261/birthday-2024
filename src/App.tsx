@@ -9,7 +9,7 @@ function App() {
   // 150 if large screen, 120 if small screen
   const magnifierSize = window.innerWidth > 768 ? 150 : 120;
   // const scale = 1.75;
-  const scale = 5;
+  const scale = 11;
   // const scale = 1;
   // const scale = 1.2;
 
