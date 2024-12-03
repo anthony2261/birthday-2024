@@ -54,7 +54,7 @@ export function Content({ blur }: { blur: boolean }) {
                   Head over to{" "}
                   <a
                     href="/competition"
-                    className="text-blue-800"
+                    className="text-sky-500"
                   >
                     anthonymalkoun.party/competition
                   </a>{" "}
