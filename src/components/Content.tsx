@@ -4,40 +4,45 @@ export function Content({ blur }: { blur: boolean }) {
       {/* Container for the content that looks like an envelope */}
       <div className="relative">
         {/* Envelope flap */}
-        <div className="absolute w-full h-12 bg-amber-50 origin-bottom -top-2 left-0 transform -rotate-2 border-t border-x border-gray-300 rounded-t-md shadow-sm" />
+        <div className="absolute w-[36px] h-[36px] bg-amber-50 -top-[17px] left-[7px] transform rotate-45 border border-gray-300 rounded-sm shadow-sm" />
 
         {/* Main envelope body */}
-        <div className="relative bg-amber-50 border border-gray-300 rounded p-[0.35rem] shadow-md">
+        <div className="relative bg-amber-50 border border-gray-300 rounded-sm p-[0.35rem] shadow-md">
           {/* Letter content */}
           <div
             className={`relative bg-white rounded-sm shadow-sm transform rotate-1`}
           >
-            <div className={`px-[0.125rem] py-[0.2rem]  ${blur ? "blur-[0.2px]" : ""}`}>
+            <div
+              className={`px-[0.125rem] py-[0.2rem]  ${
+                blur ? "blur-[0.2px]" : ""
+              }`}
+            >
               {/* Decorative letterhead */}
-              <div className="absolute top-1 right-1 text-[1.1px] text-gray-400">
+              <div className="absolute top-[2px] right-1 text-[1.1px] text-gray-400">
                 November 16, 2024
               </div>
 
-              <div className="text-[1px] text-gray-700 max-w-2xl leading-relaxed space-y-[0.125rem]">
-                <p className="font-serif italic text-[1.1px] text-gray-800 mb-[0.125rem]">
-                  Dear Friend,
+              <div className="text-[1px] text-gray-700 max-w-2xl leading-relaxed space-y-[1px]">
+                <p className="font-serif italic text-[1.1px] text-gray-800">
+                  Hi there!
                 </p>
 
-                <p>You are hereby cordially invited to my birthday party!</p>
+                <p>You are invited to my birthday party.</p>
 
-                <div className="space-y-[0.1rem]">
+                <div className="space-y-[1px]">
                   <p>
-                    <span className="font-medium">Date:</span> December 28, 2024
+                    <span className="font-semibold">Date:</span> December 28,
+                    2024
                   </p>
                   <p>
-                    <span className="font-medium">Time:</span> 2:00 PM
+                    <span className="font-semibold">Time:</span> 1:00 PM
                   </p>
                   <p>
-                    <span className="font-medium">Location:</span> Roumieh,
+                    <span className="font-semibold">Location:</span> Roumieh,
                     Beirut, Lebanon
                   </p>
                   <p>
-                    <span className="font-medium">Theme:</span> Tiny
+                    <span className="font-bold text-rose-800">Theme: Tiny</span>
                   </p>
                 </div>
 
@@ -45,8 +50,15 @@ export function Content({ blur }: { blur: boolean }) {
                   I would be delighted to have you join me for this special
                   celebration.
                 </p>
+                <p className="!mb-[3px] font-semibold">
+                  Head over to{" "}
+                  <span className="text-blue-800">
+                    anthonymalkoun.party/competition
+                  </span>{" "}
+                  for competition details.
+                </p>
 
-                <p className="mt-3 font-serif italic text-[1.5px] text-gray-800">
+                <p className="font-serif italic text-[1.5px] text-gray-800">
                   Warmest regards,
                   <br />
                   Anthony

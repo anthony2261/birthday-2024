@@ -1,5 +1,5 @@
-import React from 'react';
-import { Position } from '../types';
+import React from "react";
+import { Position } from "../types";
 
 interface MagnifyingGlassProps {
   position: Position;
@@ -10,7 +10,14 @@ interface MagnifyingGlassProps {
   onHandleMouseDown?: (e: React.MouseEvent | React.TouchEvent) => void;
 }
 
-export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, children, onHandleMouseDown }: MagnifyingGlassProps) {
+export function MagnifyingGlass({
+  position,
+  isDragging,
+  magnifierSize,
+  scale,
+  children,
+  onHandleMouseDown,
+}: MagnifyingGlassProps) {
   return (
     <div
       className="absolute pointer-events-none"
@@ -19,23 +26,25 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
         top: position.y,
         width: magnifierSize,
         height: magnifierSize,
-        transition: isDragging ? 'none' : 'all 0.3s ease-out'
+        transition: isDragging ? "none" : "all 0.3s ease-out",
       }}
     >
-      <div 
-        className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-full border-4 border-indigo-200/50 shadow-lg"
-        style={{ overflow: 'hidden' }}
+      <div
+        className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-full border-[3px] border-slate-300 shadow-lg"
+        style={{ overflow: "hidden" }}
       >
         <div className="absolute inset-0">
-          <div 
+          <div
             className="absolute text-gray-800"
             style={{
               left: `${-position.x}px`,
               top: `${-position.y}px`,
-              width: '100vw',
-              height: '100vh',
+              width: "100vw",
+              height: "100vh",
               transform: `scale(${scale})`,
-              transformOrigin: `${position.x + magnifierSize/2}px ${position.y + magnifierSize/2}px`
+              transformOrigin: `${position.x + magnifierSize / 2}px ${
+                position.y + magnifierSize / 2
+              }px`,
             }}
           >
             {children}
@@ -43,16 +52,16 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
         </div>
       </div>
 
-      <div 
+      <div
         className="absolute transform cursor-move touch-none"
         style={{
           height: magnifierSize * 0.6,
-          width: '15px',
-          right: '12px',
-          top: '83%',
-          transformOrigin: 'center top',
-          transform: 'rotate(-48deg)',
-          pointerEvents: 'auto'
+          width: "15px",
+          right: "12px",
+          top: "83%",
+          transformOrigin: "center top",
+          transform: "rotate(-48deg)",
+          pointerEvents: "auto",
         }}
         onMouseDown={(e) => {
           e.stopPropagation();
@@ -64,7 +73,7 @@ export function MagnifyingGlass({ position, isDragging, magnifierSize, scale, ch
           onHandleMouseDown?.(e);
         }}
       >
-        <div className="h-full w-full bg-gradient-to-b from-indigo-200/50 to-indigo-300/50 rounded-b-full shadow-md" />
+        <div className="h-full w-full bg-gradient-to-b from-yellow-200 from-10% via-black via-20% to-90% to-black rounded-b-full shadow-md" />
       </div>
     </div>
   );
