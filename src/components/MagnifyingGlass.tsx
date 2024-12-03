@@ -35,7 +35,7 @@ export function MagnifyingGlass({
       >
         <div className="absolute inset-0">
           <div
-            className="absolute text-gray-800"
+            className="absolute text-gray-800 pointer-events-auto"
             style={{
               left: `${-position.x}px`,
               top: `${-position.y}px`,

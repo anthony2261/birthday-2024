@@ -52,9 +52,12 @@ export function Content({ blur }: { blur: boolean }) {
                 </p>
                 <p className="!mb-[3px] font-semibold">
                   Head over to{" "}
-                  <span className="text-blue-800">
+                  <a
+                    href="/competition"
+                    className="text-blue-800"
+                  >
                     anthonymalkoun.party/competition
-                  </span>{" "}
+                  </a>{" "}
                   for competition details.
                 </p>
 
