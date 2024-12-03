@@ -43,9 +43,10 @@ function App() {
   }, [isDragging, magnifierSize]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (isDragging && showIntro) {
+      setShowIntro(false);
+    }
+  }, [isDragging, showIntro]);
 
   const handleHandleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
     if (containerRef.current) {

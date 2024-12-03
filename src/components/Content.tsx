@@ -46,16 +46,9 @@ export function Content({ blur }: { blur: boolean }) {
                   </p>
                 </div>
 
-                <p>
-                  I would be delighted to have you join me for this special
-                  celebration.
-                </p>
                 <p className="!mb-[3px] font-semibold">
                   Head over to{" "}
-                  <a
-                    href="/competition"
-                    className="text-sky-500"
-                  >
+                  <a href="/competition" className="text-sky-500">
                     anthonymalkoun.party/competition
                   </a>{" "}
                   for competition details.
