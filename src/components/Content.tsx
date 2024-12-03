@@ -7,7 +7,7 @@ export function Content({ blur }: { blur: boolean }) {
       {/* Container for the content that looks like an envelope */}
       <div className="relative">
         {/* "Read Me" sign with funky font */}
-        <div className="absolute transform -translate-y-24 translate-x-10 text-nowrap">
+        <div className="absolute transform -translate-y-24 translate-x-10 w-16">
           <p className="text-slate-600 boogaloo-regular text-xl">read me!</p>
         </div>
         {/* Hand drawn arrow */}
