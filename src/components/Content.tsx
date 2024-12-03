@@ -1,8 +1,19 @@
+import { HandDrawnArrow } from "./HandDrawnArrow";
+import "../styles/readme.css";
+
 export function Content({ blur }: { blur: boolean }) {
   return (
     <div className="flex items-center justify-center min-h-screen p-8">
       {/* Container for the content that looks like an envelope */}
       <div className="relative">
+        {/* "Read Me" sign with funky font */}
+        <div className="absolute transform -translate-y-24 translate-x-10 text-nowrap">
+          <p className="text-slate-600 boogaloo-regular text-xl">read me!</p>
+        </div>
+        {/* Hand drawn arrow */}
+        <div className="absolute transform rotate-[115deg] -translate-y-16 translate-x-7 stroke-slate-600">
+          <HandDrawnArrow />
+        </div>
         {/* Envelope flap */}
         <div className="absolute w-[36px] h-[36px] bg-amber-50 -top-[17px] left-[7px] transform rotate-45 border border-gray-300 rounded-sm shadow-sm" />
 
