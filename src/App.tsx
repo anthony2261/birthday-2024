@@ -6,8 +6,8 @@ import type { Position } from "./types";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
-  // 150 if large screen, 130 if small screen
-  const magnifierSize = window.innerWidth > 768 ? 150 : 130;
+  // 150 if large screen, 140 if small screen
+  const magnifierSize = window.innerWidth > 768 ? 150 : 140;
   const scale = 9;
 
   // Initialize position to center of screen
