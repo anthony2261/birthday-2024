@@ -30,6 +30,29 @@ export function MagnifyingGlass({
       }}
     >
       <div
+        className="absolute transform cursor-move touch-none"
+        style={{
+          height: magnifierSize * 0.6,
+          width: "22px",
+          right: "14px",
+          top: "87%",
+          transformOrigin: "center top",
+          transform: "rotate(-43deg)",
+          pointerEvents: "auto",
+        }}
+        onMouseDown={(e) => {
+          e.stopPropagation();
+          onHandleMouseDown?.(e);
+        }}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          onHandleMouseDown?.(e);
+        }}
+      >
+        <div className="h-full w-full bg-gradient-to-b from-yellow-200 from-10% via-black via-20% to-90% to-black rounded-b-full shadow-md" />
+      </div>
+      <div
         className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-full border-[3px] border-slate-300 shadow-lg"
         style={{ overflow: "hidden" }}
       >
@@ -50,30 +73,6 @@ export function MagnifyingGlass({
             {children}
           </div>
         </div>
-      </div>
-
-      <div
-        className="absolute transform cursor-move touch-none"
-        style={{
-          height: magnifierSize * 0.6,
-          width: "15px",
-          right: "12px",
-          top: "83%",
-          transformOrigin: "center top",
-          transform: "rotate(-48deg)",
-          pointerEvents: "auto",
-        }}
-        onMouseDown={(e) => {
-          e.stopPropagation();
-          onHandleMouseDown?.(e);
-        }}
-        onTouchStart={(e) => {
-          e.stopPropagation();
-          e.preventDefault();
-          onHandleMouseDown?.(e);
-        }}
-      >
-        <div className="h-full w-full bg-gradient-to-b from-yellow-200 from-10% via-black via-20% to-90% to-black rounded-b-full shadow-md" />
       </div>
     </div>
   );
