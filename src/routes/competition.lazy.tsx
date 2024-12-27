@@ -19,6 +19,8 @@ You *must* bring **one tiny item** to the party. What counts as tiny? That's up 
 
 I, Anthony, will be the judge, and crown one item as the champion of them all. Good luck.
 
+*N.B.*: the item is for the competition, not a gift for me.
+
 Inspiration: [TaskMaster's prize tasks](https://youtu.be/n8JEbc7gfzA?si=eKU1JUy2pHKbdasF&t=756)
 
 [//]: # "Consult the [FAQ](#faq) section below for more competition details."
